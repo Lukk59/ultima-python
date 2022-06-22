@@ -15,21 +15,39 @@ def adicionar_item_estoque():
     print(f"o item {nome} foi adicionado ao estoque")
     print()
 
+
+def listar_itens_estoque():
+    if len(itens_estoque) == 0:
+        print('nao ha itens para serem listados')
+        print()
+        return
+
+    print('#########################')
+    for item in itens_estoque:
+        print(f'nome: {item["nome"]}')
+        print(f'quantidade: {item["quantidade"]}')
+        print('###########################')
+
+    print()
+
 if __name__ == "__main__":
     print('bem vindo ao sistema de estoque ultima')
 
     opcao = 0
-    while opcao != 2:
+    while opcao != 3:
         print('menu de opçoes:')
         print('===============')
         print('1. adicionar item')
-        print('2. sair')
+        print('2. listar itens do estoque')
+        print('3. sair')
 
         opcao = int(input('selecione uma opçao: '))
 
         if opcao == 1:
             adicionar_item_estoque()
         elif opcao == 2:
+            listar_itens_estoque()
+        elif opcao == 3:
             print('obrigado por usar nosso sistema')
         else:
             print('opçao invalida. tente novamente\n')
