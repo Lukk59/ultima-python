@@ -1,3 +1,5 @@
+from persistencia import ler_dados_salvos, salvar_dados_disco
+
 itens_estoque = []
 
 def adicionar_item_estoque():
@@ -31,6 +33,7 @@ def listar_itens_estoque():
     print()
 
 if __name__ == "__main__":
+    itens_estoque = ler_dados_salvos()
     print('bem vindo ao sistema de estoque ultima')
 
     opcao = 0
@@ -49,5 +52,6 @@ if __name__ == "__main__":
             listar_itens_estoque()
         elif opcao == 3:
             print('obrigado por usar nosso sistema')
+            salvar_dados_disco(itens_estoque)
         else:
             print('opçao invalida. tente novamente\n')
