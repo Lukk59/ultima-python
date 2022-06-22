@@ -12,8 +12,8 @@ def adicionar_item_estoque():
     }
 
     itens_estoque.append(item)
-    print(f"o item {nome} foi adicionado ao estoque\n")
-    #print()
+    print(f"o item {nome} foi adicionado ao estoque")
+    print()
 
 if __name__ == "__main__":
     print('bem vindo ao sistema de estoque ultima')
