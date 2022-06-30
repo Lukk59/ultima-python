@@ -5,6 +5,7 @@ import requests
 
 def get_info_pokemon(url, pokemon_id):
     resposta = requests.get(url + str(pokemon_id))
+
     if resposta.status_code != 200:
         print(f'status_code: {resposta.status_code}')
         return
@@ -15,12 +16,12 @@ def get_info_pokemon(url, pokemon_id):
         'nome': resposta_info['name'],
         'tipo': ', '.join([tipo['type']['name'] for tipo in tipos]),
         'numero': resposta_info['id']
-        }
+        } # maneira 1 de fazer
 
     return pokemon_info
 
 
-class PokemonIterator():
+class PokemonIterator(): #comparavel 1 A
     def __init__(self, inicio, final):
         self.index = inicio
         self.final = final
@@ -45,6 +46,7 @@ def __init__(self):
     pass
 def __next__(self):
     raise StopIteration
+    pass # pra passar, temporario
 
 url = 'https://pokeapi.co/api/v2/pokemon/'
 index = 1 #1 bulbassaur e 25 pikachu
